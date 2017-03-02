@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+require 'lolink'
+require 'optparse'
+
+options= {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: example.rb [options]"
+  opts.on("-d", "--download", "Download directly") do |v|
+    options[:download] = true
+  end
+end.parse!
+
+d = Lolink.new
+if options.include? :download
+  Lolink.aria2(d.patch_links)
+else
+  d.patch_links.each{|l| puts l}
+end
