@@ -1,6 +1,7 @@
 require 'http'
 require 'open-uri'
 require 'nokogiri'
+require 'lolink/version'
 
 class Lolink
   def initialize
@@ -34,10 +35,10 @@ class Lolink
   end
 
   def full_links
-    files = ["#{@base_url}/full/LOL_#{@version}_FULL.exe"]
+    files = ["http://dlied1.qq.com/lol/full/LOL_#{@version}_FULL.exe"]
 
     files += test_link do |i|
-      "#{@base_url}/full/LOL_#{@version}_FULL.7z.#{i}"
+      "http://dlied1.qq.com/lol/full/LOL_#{@version}_FULL.7z.#{i}"
     end
   end
 

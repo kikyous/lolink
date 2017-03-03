@@ -1,6 +1,9 @@
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'lolink/version'
 Gem::Specification.new do |s|
   s.name        = 'lolink'
-  s.version     = '0.0.4'
+  s.version     = Lolink::Version
   s.date        = '2017-03-02'
   s.summary     = "get lol download links!"
   s.description = "lol中国区客户端和升级补丁下载器"

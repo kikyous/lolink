@@ -12,6 +12,10 @@ OptionParser.new do |opts|
   opts.on("-p", "--patch", "Patch links") do |v|
     options[:patch] = true
   end
+  opts.on("-v", "--version", "Show version") do |v|
+    puts Lolink::Version
+    exit
+  end
 end.parse!
 
 d = Lolink.new
