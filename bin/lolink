@@ -5,15 +5,23 @@ require 'optparse'
 
 options= {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: example.rb [options]"
+  opts.banner = "Usage: lolink [options]"
   opts.on("-d", "--download", "Download directly") do |v|
     options[:download] = true
+  end
+  opts.on("-p", "--patch", "Patch links") do |v|
+    options[:patch] = true
   end
 end.parse!
 
 d = Lolink.new
-if options.include? :download
-  Lolink.aria2(d.patch_links)
+if options.include? :patch
+  links=d.patch_links
 else
-  d.patch_links.each{|l| puts l}
+  links=d.full_links
+end
+if options.include? :download
+  Lolink.aria2(links)
+else
+  links.each{|l| puts l}
 end
