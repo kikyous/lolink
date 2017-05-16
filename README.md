@@ -8,19 +8,27 @@
 * 完整客户端下载地址
 ```bash
 $ lolink
-http://dlied1.qq.com/lol/full/LOL_V3.2.1.3_FULL.exe
-http://dlied1.qq.com/lol/full/LOL_V3.2.1.3_FULL.7z.001
-http://dlied1.qq.com/lol/full/LOL_V3.2.1.3_FULL.7z.002
-http://dlied1.qq.com/lol/full/LOL_V3.2.1.3_FULL.7z.003
-http://dlied1.qq.com/lol/full/LOL_V3.2.1.3_FULL.7z.004
+http://dlied1.qq.com/lol/full/3227/LOL_V3.2.2.7_FULL.exe
+http://dlied1.qq.com/lol/full/3227/LOL_V3.2.2.7_FULL.7z.001
+http://dlied1.qq.com/lol/full/3227/LOL_V3.2.2.7_FULL.7z.002
+http://dlied1.qq.com/lol/full/3227/LOL_V3.2.2.7_FULL.7z.003
+http://dlied1.qq.com/lol/full/3227/LOL_V3.2.2.7_FULL.7z.004
 ```
+
 * 最新升级补丁下载地址
 ```bash
 $ lolink -p
-http://down.qq.com/lol/patch/LOL_V3.2.1.2-V3.2.1.3_PATCH.exe
-http://down.qq.com/lol/patch/LOL_V3.2.1.3_PATCH.7z.001
-http://down.qq.com/lol/patch/LOL_V3.2.1.3_PATCH.7z.002
+http://down.qq.com/lol/patch/3227/LOL_V3.2.2.6-V3.2.2.7_PATCH.exe
+http://down.qq.com/lol/patch/3227/LOL_V3.2.2.7_PATCH.7z.001
 ```
+
+* 指定任一版本补丁
+```bash
+$ lolink -v v3.2.2.5-V3.2.2.6
+http://down.qq.com/lol/patch/3226/LOL_V3.2.2.5-V3.2.2.6_PATCH.exe
+http://down.qq.com/lol/patch/3226/LOL_V3.2.2.6_PATCH.7z.001
+```
+
 * 调用 aria2 直接下载完整客户端
 ```bash
 $ lolink -d
