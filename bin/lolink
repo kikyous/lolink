@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+lib = File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lolink'
 require 'optparse'
 
@@ -12,13 +14,13 @@ OptionParser.new do |opts|
   opts.on("-p", "--patch", "Patch links") do |v|
     options[:patch] = true
   end
-  opts.on("-v", "--version", "Show version") do |v|
-    puts Lolink::Version
-    exit
+  opts.on("-v VERSION", "--version=VERSION", "Get VERSION update patch, e.g. -v v3.2.2.5-V3.2.2.6") do |v|
+    options[:patch] = true
+    options[:version] = v.upcase
   end
 end.parse!
 
-d = Lolink.new
+d = Lolink.new(options[:version])
 if options.include? :patch
   links=d.patch_links
 else
@@ -27,5 +29,5 @@ end
 if options.include? :download
   Lolink.aria2(links)
 else
-  links.each{|l| puts l}
+  puts links
 end
