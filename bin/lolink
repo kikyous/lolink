@@ -7,7 +7,7 @@ require 'optparse'
 
 options= {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: lolink [options]"
+  opts.banner = "Version: #{Lolink::Version}\nUsage: lolink [options]"
   opts.on("-d", "--download", "Download directly") do |v|
     options[:download] = true
   end

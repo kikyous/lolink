@@ -62,6 +62,6 @@ class Lolink
   end
 
   def self.aria2(links)
-    system "aria2c -Z #{links.join(' ')}"
+    system "aria2c --force-sequential=true --continue=true #{links.join(' ')}"
   end
 end
